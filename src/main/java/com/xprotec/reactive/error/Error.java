@@ -1,6 +1,6 @@
-package com.xprotec.app.error;
+package com.xprotec.reactive.error;
 
-import com.xprotec.app.model.Person;
+import com.xprotec.reactive.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;

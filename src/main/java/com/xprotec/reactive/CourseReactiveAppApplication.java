@@ -1,13 +1,7 @@
-package com.xprotec.app;
+package com.xprotec.reactive;
 
-import com.xprotec.app.combination.Combination;
-import com.xprotec.app.conditional.Conditional;
-import com.xprotec.app.creation.Creation;
-import com.xprotec.app.error.Error;
-import com.xprotec.app.filters.Filters;
-import com.xprotec.app.math.Mathematical;
-import com.xprotec.app.model.Person;
-import com.xprotec.app.tranform.Transformation;
+import com.xprotec.reactive.model.Person;
+import com.xprotec.reactive.reactive.Chapter02;
 import io.reactivex.rxjava3.core.Observable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,44 +16,44 @@ import java.util.List;
 
 @SpringBootApplication
 public class CourseReactiveAppApplication implements CommandLineRunner {
-    private static  final Logger log = LoggerFactory.getLogger(CourseReactiveAppApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(CourseReactiveAppApplication.class);
 
-    public void reactor(){
-        Mono.just(new Person(1,"Jedion","Paucar",30))
+    public void reactor() {
+        Mono.just(new Person(1, "Jedion", "Paucar", 30))
                 //.doOnNext(c->log.info("[reactor] {}", c.toString()));
-                .doOnNext(c-> {
+                .doOnNext(c -> {
                     log.info("[reactor] {}", c.toString());
-                }).subscribe(c->log.info("[reactor] {}", c.toString()));
+                }).subscribe(c -> log.info("[reactor] {}", c.toString()));
     }
 
-    public void  rxJava3(){
-        Observable.just(new Person(1,"Jedion","Paucar",30))
-                .doOnNext(c->log.info("[RxJava3] {}", c.toString()));
-                //.subscribe(c->log.info("[RxJava3] {}", c.toString()));
+    public void rxJava3() {
+        Observable.just(new Person(1, "Jedion", "Paucar", 30))
+                .doOnNext(c -> log.info("[RxJava3] {}", c.toString()));
+        //.subscribe(c->log.info("[RxJava3] {}", c.toString()));
     }
 
-    public void mono(){
-        Mono.just(new Person(1,"Jedion","Paucar",30))
-                .subscribe(c-> log.info("[Mono] {}", c.toString()));
+    public void mono() {
+        Mono.just(new Person(1, "Jedion", "Paucar", 30))
+                .subscribe(c -> log.info("[Mono] {}", c.toString()));
     }
 
-    public void flux(){
+    public void flux() {
         List<Person> personList = new ArrayList<>();
-        personList.add(new Person(1,"Jedion","Paucar",30));
-        personList.add(new Person(2,"Maria","Lucia",60));
-        personList.add(new Person(3,"Jedion","Paucar",40));
+        personList.add(new Person(1, "Jedion", "Paucar", 30));
+        personList.add(new Person(2, "Maria", "Lucia", 60));
+        personList.add(new Person(3, "Jedion", "Paucar", 40));
 
-        Flux.fromIterable(personList).subscribe(c-> log.info("[Flux] {} ", c.toString()));
+        Flux.fromIterable(personList).subscribe(c -> log.info("[Flux] {} ", c.toString()));
     }
 
-    public void fluxToMono(){
+    public void fluxToMono() {
         List<Person> personList = new ArrayList<>();
-        personList.add(new Person(1,"Jedion","Paucar",30));
-        personList.add(new Person(2,"Maria","Lucia",60));
-        personList.add(new Person(3,"Jedion","Paucar",40));
+        personList.add(new Person(1, "Jedion", "Paucar", 30));
+        personList.add(new Person(2, "Maria", "Lucia", 60));
+        personList.add(new Person(3, "Jedion", "Paucar", 40));
 
-        Flux<Person> personFlux =   Flux.fromIterable(personList);
-        personFlux.collectList().subscribe(c-> log.info(c.toString()));
+        Flux<Person> personFlux = Flux.fromIterable(personList);
+        personFlux.collectList().subscribe(c -> log.info(c.toString()));
 
     }
 
@@ -73,7 +67,7 @@ public class CourseReactiveAppApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        reactor();
+       /* reactor();
         rxJava3();
         mono();
         flux();
@@ -128,9 +122,13 @@ public class CourseReactiveAppApplication implements CommandLineRunner {
         Mathematical mathematical = new Mathematical();
         mathematical.average();
 
+*/
+        System.out.println("====> CHAPTER");
+
+        Chapter02 chapter01 = new Chapter02();
+        chapter01.program1();
+
     }
-
-
 
 
 }

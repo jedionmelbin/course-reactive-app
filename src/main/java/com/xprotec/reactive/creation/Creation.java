@@ -1,6 +1,6 @@
-package com.xprotec.app.creation;
+package com.xprotec.reactive.creation;
 
-import com.xprotec.app.model.Person;
+import com.xprotec.reactive.model.Person;
 import io.reactivex.rxjava3.core.Observable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,8 @@
-package com.xprotec.app.combination;
+package com.xprotec.reactive.combination;
 
 
-import com.xprotec.app.model.Person;
-import com.xprotec.app.model.Sale;
+import com.xprotec.reactive.model.Person;
+import com.xprotec.reactive.model.Sale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
@@ -58,7 +58,7 @@ public class Combination {
         Flux<Sale> flux3 = Flux.fromIterable(sales);
 
         Flux.zip(flux1,flux2, (p1,p2)-> String.format("%s %s", p1,p2))
-                .subscribe(c->log.info(c));
+                .subscribe(log::info);
     }
 
     public void  zipWith(){

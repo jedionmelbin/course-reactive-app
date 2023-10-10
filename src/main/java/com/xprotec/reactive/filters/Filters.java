@@ -1,7 +1,6 @@
-package com.xprotec.app.filters;
+package com.xprotec.reactive.filters;
 
-import com.xprotec.app.model.Person;
-import com.xprotec.app.tranform.Transformation;
+import com.xprotec.reactive.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;

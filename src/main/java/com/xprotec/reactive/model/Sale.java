@@ -1,4 +1,4 @@
-package com.xprotec.app.model;
+package com.xprotec.reactive.model;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package com.xprotec.app;
+package com.xprotec.reactive;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
