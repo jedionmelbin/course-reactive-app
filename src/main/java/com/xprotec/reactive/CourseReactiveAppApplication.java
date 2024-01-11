@@ -2,6 +2,7 @@ package com.xprotec.reactive;
 
 import com.xprotec.reactive.model.Person;
 import com.xprotec.reactive.reactive.Chapter02;
+import com.xprotec.reactive.reactive.Chapter11;
 import io.reactivex.rxjava3.core.Observable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -125,8 +126,8 @@ public class CourseReactiveAppApplication implements CommandLineRunner {
 */
         System.out.println("====> CHAPTER");
 
-        Chapter02 chapter01 = new Chapter02();
-        chapter01.program1();
+        Chapter11 chapter01 = new Chapter11();
+        chapter01.exampleContraPressure();
 
     }
 
