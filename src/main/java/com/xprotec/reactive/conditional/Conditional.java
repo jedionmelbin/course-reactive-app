@@ -21,9 +21,12 @@ public class Conditional {
 
     public void takeUntil() {
         List<Person> personList = new ArrayList<>();
+
         personList.add(new Person(1, "Jedion", "Paucar", 30));
         personList.add(new Person(2, "Maria", "Lucia", 60));
         personList.add(new Person(3, "Jedion", "Paucar", 40));
+        personList.add(new Person(4, "Jedion", "Paucar", 13));
+        personList.add(new Person(5, "Jedion", "Paucar", 809));
 
         // Solo obtiene hasta donde encuentra la coleccion.
         Flux.fromIterable(personList)
